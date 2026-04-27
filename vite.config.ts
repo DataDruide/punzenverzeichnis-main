@@ -21,6 +21,13 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       output: {
         manualChunks: {
+          'react-vendor': [
+            'react',
+            'react-dom',
+            'react-router-dom',
+            'react-hook-form',
+            '@tanstack/react-query',
+          ],
           'vendor': [
             '@radix-ui/react-accordion',
             '@radix-ui/react-alert-dialog',
@@ -44,22 +51,14 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-toggle',
             '@radix-ui/react-tooltip',
           ],
-          'react-vendor': [
-            'react',
-            'react-dom',
-            'react-router-dom',
-            'react-hook-form',
-          ],
           'supabase': [
             '@supabase/supabase-js',
-            '@tanstack/react-query',
           ],
           'utils': [
             'recharts',
             'date-fns',
             'jspdf',
             'jspdf-autotable',
-            
             'zod',
           ],
         },
