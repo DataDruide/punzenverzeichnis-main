@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,12 +28,12 @@ jobs:
       - name: Add custom domain file
         run: echo 'dt-punzenverzeichnis.com' > dist/CNAME
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: gh-pages
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
-          allow_empty_commit: true
+      - name: Deploy to GitHub Pages branch
+        run: |
+          cd dist
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/DataDruide/punzenverzeichnis-main.git" HEAD:gh-pages
