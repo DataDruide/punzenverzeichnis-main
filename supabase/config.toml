@@ -1,0 +1,7 @@
+project_id = "gnufywlflvxvfmczvylu"
+
+[functions.validate-upload]
+verify_jwt = false
+
+[functions.list-users]
+verify_jwt = false

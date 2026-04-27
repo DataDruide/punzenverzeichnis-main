@@ -1,0 +1,59 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables - SENSITIVE
+.env
+.env.local
+.env.production
+.env.production.local
+.env.development.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# IDE
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+.idea/workspace.xml
+.idea/modules.xml
+
+# Cache
+.eslintcache
+.stylelintcache
+tsconfig.tsbuildinfo
+
+# Build artifacts
+supabase/migrations/*.sql
+
+# Credentials and secrets (if accidentally committed)
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
