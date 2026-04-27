@@ -8,6 +8,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import AppLayout from "./components/AppLayout";
+import '@fontsource/dm-sans'; // Basisimport
 
 // Lazy load page components for better code splitting
 const Dashboard = lazy(() => import("./pages/Dashboard"));
