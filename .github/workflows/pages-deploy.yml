@@ -28,9 +28,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Add custom domain file
-        run: echo 'dt-punzenverzeichnis.com' > dist/CNAME
-
       - name: Deploy to GitHub Pages branch
         run: |
           cd dist
