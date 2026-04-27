@@ -26,6 +26,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Debug environment
+        run: |
+          echo "CLOUDFLARE_API_TOKEN is set: $([ -z '${{ secrets.CLOUDFLARE_API_TOKEN }}' ] && echo 'NO' || echo 'YES')"
+          echo "Secrets context: ${{ toJson(secrets) }}"
+
       - name: Publish to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
