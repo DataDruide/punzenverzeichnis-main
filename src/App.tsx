@@ -37,7 +37,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <BrowserRouter basename="/punzenverzeichnis-main">
           <AuthProvider>
             <Suspense fallback={<LoadingFallback />}>
               <Routes>
