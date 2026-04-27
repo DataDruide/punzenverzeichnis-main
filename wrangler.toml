@@ -1,0 +1,17 @@
+name = "punz9082383648342"
+account_id = "e4f4400f0ef36650f4828a2bf9f5c803"
+type = "javascript"
+
+[env.production]
+routes = []
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.{js,jsx,ts,tsx}"]
+
+[build.upload]
+format = "service-worker"
+
+[[triggers.scheduled]]
+crons = []
